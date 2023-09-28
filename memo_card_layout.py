@@ -4,9 +4,9 @@ from PyQt5.QtWidgets import*
 app = QApplication([])
 
 #---pushbuttons -------
-menu = QPushButton('Menu')
-rest = QPushButton('Rest')
-answer = QPushButton('Answer')
+menu = QPushButton('Меню')
+rest = QPushButton('Відпочити')
+answer = QPushButton('Відповісти')
 
 #----- radiobuttons ----
 r1 = QRadioButton()
@@ -14,7 +14,7 @@ r2 = QRadioButton()
 r3 = QRadioButton()
 r4 = QRadioButton()
 
-r_list = [r1, r2, r3, r4]# список радиокнопок
+
 
 radio_group = QButtonGroup()#радіогрупа
 
@@ -64,6 +64,8 @@ hor3.addWidget(box1)# layout_3
 
 hor4.addWidget(answer)
 
+
+
 #---- create main vertical layout -----
 
 main_vertical = QVBoxLayout()
@@ -75,8 +77,11 @@ main_vertical.addStretch()
 main_vertical.addLayout(hor4, stretch = 1)
 main_vertical.addStretch()
 #main_vertical.setSpacing(5)
+
+
+
 #------------ RESULT window -------
-box2 = QGroupBox('Resalt of your answer:')
+box2 = QGroupBox('Результат:')
 right_wrong = QLabel('dont know yet!))) ')
 vidpovid = QLabel('apple')
 
@@ -94,14 +99,14 @@ box2.hide()
 
 def show_result():
     box1.hide()
-    answer.setText('Next question')
+    answer.setText('Наступне питання')
     box2.show()
     
     
 def show_question():
     box1.show()
     box2.hide()
-    answer.setText('Answer')
+    answer.setText('Відповісти')
 
     #--- сбрасуємо минулі вибори ---
     radio_group.setExclusive(False)
@@ -114,7 +119,7 @@ def show_question():
    
 
 
-answer.clicked.connect(show_result)
+
 
 
 
